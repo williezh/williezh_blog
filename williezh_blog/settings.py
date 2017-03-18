@@ -29,7 +29,12 @@ TIME_ZONE = "Asia/Shanghai"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "zh-CN"
+LANGUAGE_CODE = "zh-hans"
+gettext = lambda s: s  # noqa
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('zh-hans', gettext('Simplified Chinese')),
+)
 
 SITE_ID = int(os.environ.get("SITE_ID", 1))
 
@@ -102,7 +107,12 @@ TEMPLATES = [
                 "pinax_theme_bootstrap.context_processors.theme",
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
-                'zinnia.context_processors.version',
+                'zinnia.context_processors.version',                
+            ],
+            'loaders': [
+               'app_namespace.Loader',
+               'django.template.loaders.filesystem.Loader',
+               'django.template.loaders.app_directories.Loader',
             ],
         },
     },
@@ -141,7 +151,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django_comments',
     'mptt',
-    'tagging',
+    'tagging',  
+    'zinnia_bootstrap', 
     'zinnia',    
 
     # external
@@ -204,3 +215,8 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_TWITTER_KEY = ""
 SOCIAL_AUTH_TWITTER_SECRET = ""
+
+ZINNIA_MARKUP_LANGUAGE = 'markdown'
+ZINNIA_MARKDOWN_EXTENSIONS = ['markdown.extensions.extra', 
+                              'markdown.extensions.codehilite',
+                            ]
