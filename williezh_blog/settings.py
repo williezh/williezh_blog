@@ -25,11 +25,11 @@ ALLOWED_HOSTS = [
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Shanghai"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "zh-CN"
 
 SITE_ID = int(os.environ.get("SITE_ID", 1))
 
@@ -102,6 +102,7 @@ TEMPLATES = [
                 "pinax_theme_bootstrap.context_processors.theme",
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
+                'zinnia.context_processors.version',
             ],
         },
     },
@@ -134,6 +135,14 @@ INSTALLED_APPS = [
     # theme
     "bootstrapform",
     "pinax_theme_bootstrap",
+    
+    #zinnia
+    'django.contrib.admindocs',
+    'django.contrib.sitemaps',
+    'django_comments',
+    'mptt',
+    'tagging',
+    'zinnia',    
 
     # external
     "account",
