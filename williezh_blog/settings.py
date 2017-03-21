@@ -91,7 +91,7 @@ TEMPLATES = [
         "DIRS": [
             os.path.join(PACKAGE_ROOT, "templates"),
         ],
-        "APP_DIRS": True,
+        "APP_DIRS": False,
         "OPTIONS": {
             "debug": DEBUG,
             "context_processors": [
