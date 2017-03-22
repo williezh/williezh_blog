@@ -13,6 +13,23 @@ DATABASES = {
         "NAME": "dev.db",
     }
 }
+if 1:
+    from .local_settings import email_conf,DATABASES as local_db
+    import pymysql
+    pymysql.install_as_MySQLdb()
+    DATABASES.update(local_db)
+    #  ---------------------------------------------------------
+    #  Email ,ref:http://www.cnblogs.com/BeginMan/p/3443158.html
+    EMAIL_BACKEND = email_conf["EMAIL_BACKEND"]
+
+    EMAIL_USE_TLS = email_conf["EMAIL_USE_TLS"]
+    EMAIL_HOST = email_conf["EMAIL_HOST"]
+    EMAIL_PORT = email_conf["EMAIL_PORT"]
+    EMAIL_HOST_USER = email_conf["EMAIL_HOST_USER"]
+    EMAIL_HOST_PASSWORD = email_conf["EMAIL_HOST_PASSWORD"]
+    DEFAULT_FROM_EMAIL = email_conf["DEFAULT_FROM_EMAIL"]
+    #  ---------------------------------------------------------
+
 
 ALLOWED_HOSTS = [
     "localhost",'127.0.0.1',
@@ -198,7 +215,7 @@ FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_EMAIL_UNIQUE = True
