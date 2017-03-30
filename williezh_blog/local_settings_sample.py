@@ -1,7 +1,7 @@
 #coding:utf-8
 
 DATABASES = {
-    'slave': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'williezh_blog',      #数据库里的database名称
         'USER': 'root',         #进入数据库的用户名

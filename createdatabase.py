@@ -17,7 +17,7 @@ try:
     conn=pymysql.connect(**config)
     cur=conn.cursor()
     
-    cur.execute('drop database {}'.format(database))
+#    cur.execute('drop database {}'.format(database))
     cur.execute('create database if not exists {}'.format(database))
     #conn.select_db(database)
     conn.commit()    
