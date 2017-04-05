@@ -5,7 +5,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = PACKAGE_ROOT
 
-DEBUG = True
+DEBUG = False
 
 DATABASES = {
     "default": {
@@ -33,6 +33,7 @@ if 1:
 
 ALLOWED_HOSTS = [
     "localhost",'127.0.0.1',
+    'williezh.pythonanywhere.com',
 ]
 
 # Local time zone for this installation. Choices can be found here:
