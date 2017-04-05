@@ -35,7 +35,7 @@ source venv/bin/activate
 ```
 5. 安装必需包（首次运行）：
 ```
-pip install -r requiredments.txt
+pip install -r requirements.txt
 ```
 6. 由local_settings_sample.py创建local_settings.py
 ```
@@ -50,6 +50,7 @@ vi williezh_blog/local_settings.py
 python createdatabase.py
 python manage.py migrate
 python manage.py loaddata mysql_data.json
+python manage.py createsuperuser
 ```
 9. 运行服务：
 ```
@@ -58,3 +59,7 @@ python manage.py runserver
 10. 打开如下网址即可看到运行效果：
 
 http://127.0.0.1:8000/ 
+
+10. 进入管理员模式可发表博客：
+
+http://127.0.0.1:8000/admin
