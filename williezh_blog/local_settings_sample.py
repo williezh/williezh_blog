@@ -3,10 +3,10 @@
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'williezh_blog',      #数据库里的database名称
+        'NAME': 'williezh$williezh_blog',      #数据库里的database名称
         'USER': 'williezh',         #进入数据库的用户名
-        'PASSWORD': 'jaket5219999',   #密码
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'jaket521',   #密码
+        'HOST': 'williezh.mysql.pythonanywhere-services.com',
         'PORT': 3306,
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
